@@ -1,0 +1,59 @@
+﻿body {
+}
+
+.sidebar-background
+{
+    background-image:url(../img/sidebar-3.jpg) !important;
+    background-position:center center !important;
+}
+.listHeader {
+    font-size: 12px;
+}
+.card .card-header-primary .card-icon, .card .card-header-primary .card-text, .card .card-header-primary:not(.card-header-icon):not(.card-header-text), .card.bg-primary, .card.card-rotate.bg-primary .front, .card.card-rotate.bg-primary .back{
+        background: linear-gradient(60deg, #f44336, #f44336);
+}
+.sidebar .nav-item .collapse .collapse-inner, .sidebar .nav-item .collapsing .collapse-inner
+{
+        padding: .5rem 0;
+    min-width: 10rem;
+    font-size: .85rem;
+    margin: 0 0 1rem 0;
+}
+.py-2 {
+    padding-bottom: .5rem!important;
+}
+.bg-white {
+    background-color: #fff!important;
+}
+.rounded {
+    border-radius: .35rem!important;
+}
+
+#collapseTwo{
+    margin: 0px 15px;   
+    background-color:#f44336;
+        border-radius: 3px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+}
+#collapseTwo  a{
+    color: #fff;
+}
+#collapseTwo .material-icons{
+    color: #fff;
+}
+.field-validation-error
+{
+    font-size: 11px;
+    color: red;
+}
+#yoklama .form-control option{
+    width:100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+}
+
+.content
+{
+    margin-top:0px !important;padding:0px !important;
+}

@@ -1,0 +1,103 @@
+﻿@using yoklamaSDU.ViewModels
+@model AddLessonViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" id="yoklama">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Ders Ekle</h4>
+                <p class="card-category">Lütfen tüm bilgileri doldurunuz.</p>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Save", "DersEkle", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Fakülte</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                  
+                                    @Html.DropDownListFor(q => q.FacultyID, new SelectList(ViewBag.Faculty, "Value", "Text"), new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(q => q.FacultyID)
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Bölüm</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    @Html.DropDownListFor(q => q.DepartmanID, new SelectList(ViewBag.Departman, "Value", "Text"), "--", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(q => q.DepartmanID)
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Ders Adı</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    @Html.TextBoxFor(q => q.LessonName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(q => q.LessonName)
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Sınıf</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    @Html.DropDownListFor(q => q.ClassID, new SelectList(ViewBag.Class, "Value", "Text"), "--", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(q => q.ClassID)
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Ders Kodu</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    @Html.TextBoxFor(q => q.LessonCode, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(q => q.LessonCode)
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Devamsızlık Hakkı</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    @Html.TextBoxFor(q => q.MaxContinuity, new { @class = "form-control", @type = "number" })
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 5px">
+                                <div class="col-md-6 col-sm-12">
+                                    <label class="listHeader" style="color:red;font-size:13px">Öğrenci Listesi</label>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="file-field">
+                                        <div style="width:100%; background-color:#f44336; border-color:#f44336;" class="btn btn-primary btn-sm float-left">
+                                            <input type="file" id="file" name="file" class="validate">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-default pull-left">Kaydet</button>
+                }
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

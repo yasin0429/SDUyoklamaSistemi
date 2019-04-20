@@ -1,0 +1,53 @@
+﻿@using yoklamaSDU.ViewModels
+@model List<ListLessonsViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">Ders Bilgileri</h4>
+                <p class="card-category"> Dönemde aldığınız dersleri görebilirsiniz</p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="text-primary" style="color:red!important">
+                            <tr>
+                                <th>
+                                    Ders Kodu
+                                </th>
+                                <th>
+                                    Ders Adı
+                                </th>
+                                <th>
+                                    Öğretim Görevlisi
+                                </th>
+                                <th>
+                                    Kalan Devamsızlık
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var model in Model)
+                            {
+                                <tr>
+                                    <td>@(model.LessonCode)</td>
+                                    <td>@(model.LessonName)</td>
+                                    <td>@(model.EducatorName)</td>
+                                    <td class="text-primary">@(model.Max)</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

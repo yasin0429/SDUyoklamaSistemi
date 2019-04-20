@@ -1,0 +1,41 @@
+﻿@using yoklamaSDU.AppCode
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container" id="yoklamaContainer">
+        <div class="row justify-content-md-center">
+
+            <div class="col-md-9">
+                <h3 class="text-center">YOKLAMA BAŞLAT</h3>
+                <div class="dropdown">
+                    <button style="width:100%" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        YOKLAMA BAŞLATILACAK DERSİ SEÇİNİZ
+                    </button>
+                    <div style="width:100%" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">BIL-402	Algoritmaların Analizi</a>
+                        <a class="dropdown-item" href="#">BIL-410	İş Hayatı İçin İngilizce</a>
+                        <a class="dropdown-item" href="#">BIL-414	Bilgisayar ve Ağ Güvenliği</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button style="width:100%" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SINIF SEÇİNİZ
+                    </button>
+                    <div style="width:100%" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">1. Öğretim A Şubesi</a>
+                        <a class="dropdown-item" href="#">1. Öğretim B Şubesi</a>
+                        <a class="dropdown-item" href="#">2. Öğretim A Şubesi</a>
+                        <a class="dropdown-item" href="#">2. Öğretim B Şubesi</a>
+                    </div>
+                </div>
+                <a href="#" style="background-color:#f44336" class="btn btn-block"> Yoklamayı Başlat</a>
+            </div>
+            <div class="col-md-9">
+                <iframe src="~/WebPage/user.html" width=100%; style="border:none;margin-top:5px;" height=390px;></iframe>
+            </div>
+                </div>
+    </div>
+<div>
+</div>

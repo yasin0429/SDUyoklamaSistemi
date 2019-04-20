@@ -1,0 +1,91 @@
+﻿@using yoklamaSDU.ViewModels
+@model SettingsViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4" style="top:0;bottom: 0;left: 0;right: 0;margin:auto;">
+        @using (Html.BeginForm("UpdatePassword", "Ayarlar", FormMethod.Post))
+            {
+        <div class="card card-profile" style="height:100%;width:100%">
+            <div class="card-avatar">
+                <a href="#pablo">
+                    <img class="img" src="@Model.Photo">
+                </a>
+            </div>
+           @Html.HiddenFor(q=>q.Photo)
+            @Html.HiddenFor(q=>q.NameSurname)
+            @Html.HiddenFor(q=>q.SicilNo)
+            @Html.HiddenFor(q=>q.StudentNo)
+            @Html.HiddenFor(q=>q.TCKN)
+
+            <div class="card-body" style="text-align:left">
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Adı Soyadı :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>@Model.NameSurname</label>
+                    </div>
+                </div>
+                @if (Model.SicilNo != null)
+                {
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">Sicil No :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.SicilNo</label>
+                        </div>
+                    </div>
+                }
+                @if (Model.TCKN != null)
+                {
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">TC :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.TCKN</label>
+                        </div>
+                    </div>
+                }
+                
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Eski Şifre :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        @Html.TextBoxFor(q=>q.CurrentPassword,new { @class="listHeader form-control",@autocomplate="false",@type="password"})
+                        @Html.ValidationMessageFor(q=>q.CurrentPassword)
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Yeni Şifre :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        @Html.TextBoxFor(q => q.NewPassword, new { @class = "listHeader form-control", @autocomplate = "false", @type = "password" })
+                        @Html.ValidationMessageFor(q => q.NewPassword)
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Yeni Şifre (Tekrar) :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        @Html.TextBoxFor(q => q.NewPasswordRepeat, new { @class = "listHeader form-control", @autocomplate = "false", @type = "password" })
+                        @Html.ValidationMessageFor(q => q.NewPasswordRepeat)
+                    </div>
+                </div>
+            </div>
+            @Html.HiddenFor(q=>q.ID)
+            <button type="submit"    style="background-color: #f44336"  class="btn btn-primary pull-right">Şifre Güncelle<div class="ripple-container"></div></button>
+
+        </div>
+            }
+    </div>
+</div>
+

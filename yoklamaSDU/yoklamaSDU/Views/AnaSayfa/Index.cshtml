@@ -1,0 +1,99 @@
+﻿@using yoklamaSDU.ViewModels
+@using yoklamaSDU.AppCode
+@model HomePageViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="row">
+    <div class="col-md-4" style="top:0;bottom: 0;left: 0;right: 0;margin:auto;">
+        <div class="card card-profile" style="height:100%;width:100%">
+            <div class="card-avatar">
+                <a href="#pablo">
+                    <img class="img" src="@Model.Photo">
+                </a>
+            </div>
+            <div class="card-body" style="text-align:left">
+                <h6 class="card-category text-gray" style="text-align:center">@(Model.AuthType == (int)EnumAuthType.Ogrenci ? "Öğrenci" : "Öğretim Görevlisi")</h6>
+                @if (Model.AuthType == (int)EnumAuthType.Ogrenci)
+                {
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">Öğrenci Numarası :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.StudentNo</label>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">Sicil No :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.SicilNo</label>
+                        </div>
+                    </div>
+                }
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Adı Soyadı :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>@Model.NameSurname</label>
+                    </div>
+                </div>
+                @if (Model.AuthType == (int)EnumAuthType.Ogrenci)
+                {
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">TC :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.TCKN</label>
+                        </div>
+                    </div>
+                }
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Fakülte :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>@Model.Faculty</label>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 5px">
+                    <div class="col-md-6 col-sm-12">
+                        <label class="listHeader" style="color:red;">Bölüm :</label>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <label>@Model.Departman</label>
+                    </div>
+                </div>
+                @if (Model.AuthType == (int)EnumAuthType.Ogrenci)
+                {
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">Sınıf :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.Class</label>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 5px">
+                        <div class="col-md-6 col-sm-12">
+                            <label class="listHeader" style="color:red;">Şube :</label>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <label>@Model.Branch</label>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
